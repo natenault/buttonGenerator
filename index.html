@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+</style>
+</head>
+<body>
+	<div class="one-half first"><h2>User Input</h2>
+	<h3>Text Options</h3>
+	<ul>
+		<li><label for="buttonText">Button Text: </label><input type="text" id="buttonText" name="buttonText"></li>
+		<li><label for="fontSize">Font Size: </label><input type="number" id="fontSize" name="fontSize"></li>
+	</ul>
+	<h3>Button Sizing</h3>
+	<ul>
+		<li><label for="paddingTop">Top Padding: </label><input type="number" id="paddingTop" name="paddingTop"></li>
+		<li><label for="paddingRight">Right Padding: </label><input type="number" id="paddingRight" name="paddingRight"></li>
+		<li><label for="paddingBottom">Bottom Padding: </label><input type="number" id="paddingBottom" name="paddingBottom"></li>
+		<li><label for="paddingLeft">Left Padding: </label><input type="number" id="paddingLeft" name="paddingLeft"></li>
+	</ul>
+	<h3>Border</h3>
+		<ul>
+			<li><label for="borderWidth">Border Width: </label><input type="number" id="borderWidth" name="borderWidth"></li>
+			<li><label for="borderStyle">Border Style:     </label><select id="borderStyle">
+				<option value="solid">Solid</option>
+				<option value="dotted">Dotted</option>
+				<option value="dashed">Dashed</option></select></li>
+			<li><label for="borderRadius">Border Radius: </label><input type="number" id="borderRadius" name="borderRadius"></li>
+		</ul>
+	<h3>Background</h3>
+	</div>
+	<div class="one-half last"><h2>Preview</h2>
+	<button id="previewButton">dummyText
+	</button>
+	</div>
+
+
+
+<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+<script>
+
+	$(function(){
+		$('#previewButton').click(function(){
+			var buttonText = $('#buttonText').val();
+			$('#previewButton').text(buttonText);
+			var fontSize = $('#fontSize').val();
+			var topPadding = $('#topPadding').val();
+			var rightPadding = $('#rightPadding').val();
+			var bottomPadding = $('#bottomPadding').val();
+			var leftPadding = $('#leftPadding').val();
+			var borderWidth = $('#borderWidth').val();
+			var borderStyle = $( "#borderStyle option:selected").val();
+			var borderRadius = $('#borderRadius').val();
+
+			var buttonStyles = {
+				"font-size": fontSize,
+				"padding-top": topPadding,
+				"padding-right": rightPadding,
+				"padding-left": leftPadding,
+				"padding-bottom": bottomPadding,
+				"border-width": borderWidth,
+				"border-style": borderStyle,
+				"border-radius": borderRadius + "px"
+			};
+			$("#previewButton").css(buttonStyles);
+		})
+	})
+	
+</script>
+
+</body>
+</html>
