@@ -22,6 +22,10 @@
 						<label for="fontSize">Font Size:</label>
 						<input type="number" id="fontSize" name="fontSize" min="0" value="16">
 					</li>
+					<li>
+						<label for="fontColor">Font Color:</label>
+						<input type="color" id="fontColor" name="fontColor" value="#cccccc">
+					</li>
 				</ul>
 				<h3>Button Sizing</h3>
 				<ul>
@@ -62,6 +66,12 @@
 						</li>
 					</ul>
 				<h3>Background</h3>
+				<ul>
+					<li>
+						<label for="backgroundColor">Background Color:</label>
+						<input type="color" id="backgroundColor" name="backgroundColor" value="#333333">
+					</li>
+				</ul>
 			</div>
 			<div class="one-half last">
 				<h2>Preview</h2>
@@ -75,20 +85,30 @@
 		<script>
 
 			$(function(){
-
+				var fontSize = $('#fontSize').val();
+				var paddingTop = $('#paddingTop').val();
+				var paddingRight = $('#paddingRight').val();
+				var paddingBottom = $('#paddingBottom').val();
+				var paddingLeft = $('#paddingLeft').val();
+				var borderWidth = $('#borderWidth').val();
+				var borderStyle = $( "#borderStyle option:selected").val();
+				var borderRadius = $('#borderRadius').val();
+				var backgroundColor = $('#backgroundColor').val();
+				var fontColor = $('#fontColor').val();
 				$('#previewButton').click(function(){
 					var buttonText = $('#buttonText').val();
 					$('#previewButton').text(buttonText);
 
-					var fontSize = $('#fontSize').val();
-					var paddingTop = $('#paddingTop').val();
-					var paddingRight = $('#paddingRight').val();
-					var paddingBottom = $('#paddingBottom').val();
-					var paddingLeft = $('#paddingLeft').val();
-					var borderWidth = $('#borderWidth').val();
-					var borderStyle = $( "#borderStyle option:selected").val();
-					var borderRadius = $('#borderRadius').val();
-
+					fontSize = $('#fontSize').val();
+					paddingTop = $('#paddingTop').val();
+					paddingRight = $('#paddingRight').val();
+					paddingBottom = $('#paddingBottom').val();
+					paddingLeft = $('#paddingLeft').val();
+					borderWidth = $('#borderWidth').val();
+					borderStyle = $( "#borderStyle option:selected").val();
+					borderRadius = $('#borderRadius').val();
+					backgroundColor = $('#backgroundColor').val();
+					fontColor = $('#fontColor').val();
 					var buttonStyles = {
 						"font-size": fontSize + "px",
 						"padding-top": paddingTop + "px",
@@ -97,7 +117,9 @@
 						"padding-bottom": paddingBottom + "px",
 						"border-width": borderWidth + "px",
 						"border-style": borderStyle,
-						"border-radius": borderRadius + "px"
+						"border-radius": borderRadius + "px",
+						"background-color": backgroundColor,
+						"color": fontColor
 					};
 					$("#previewButton").css(buttonStyles);
 				})
