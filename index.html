@@ -78,6 +78,9 @@
 				<div id="buttonHolder">
 					<button id="previewButton">dummyText</button>
 				</div>
+				<div id="buttonCode">
+					<pre></pre>
+				</div>
 			</div>
 		</div>
 
@@ -122,8 +125,16 @@
 						"color": fontColor
 					};
 					$("#previewButton").css(buttonStyles);
+					var cssString = '.button-style {';
+						for( var prop in buttonStyles ){
+							cssString += "\n\t" + prop + ": " + buttonStyles[prop] + ";";
+						}
+					cssString += '\n}';
+
+					$('#buttonCode pre').append(cssString);
 				})
 			})
+
 			
 		</script>
 
