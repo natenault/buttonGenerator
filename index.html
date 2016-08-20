@@ -89,6 +89,9 @@
 						</ul>
 					</div>
 				</div>
+				<div class="apply-styles">
+					<button id="applyButton">Apply Styling</button>
+				</div>
 			</div>
 			<div class="two-fifths last">
 				<h2>Preview</h2>
@@ -111,6 +114,7 @@
 				$( "#tabs" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
     			$( "#tabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
 
+				// Declare all style property variables
 				var fontSize = $('#fontSize').val();
 				var paddingTop = $('#paddingTop').val();
 				var paddingRight = $('#paddingRight').val();
@@ -121,7 +125,12 @@
 				var borderRadius = $('#borderRadius').val();
 				var backgroundColor = $('#backgroundColor').val();
 				var fontColor = $('#fontColor').val();
-				$('#previewButton').click(function(){
+
+				// Display new styles on click of button with id applyButton
+				$('#applyButton').click(function( evt ){
+
+					evt.preventDefault();
+
 					var buttonText = $('#buttonText').val();
 					$('#previewButton').text(buttonText);
 
@@ -135,6 +144,7 @@
 					borderRadius = $('#borderRadius').val();
 					backgroundColor = $('#backgroundColor').val();
 					fontColor = $('#fontColor').val();
+
 					var buttonStyles = {
 						"font-size": fontSize + "px",
 						"padding-top": paddingTop + "px",
@@ -147,7 +157,10 @@
 						"background-color": backgroundColor,
 						"color": fontColor
 					};
+
 					$("#previewButton").css(buttonStyles);
+
+					// Add style properties to display box
 					var cssString = '.button-style {';
 						for( var prop in buttonStyles ){
 							cssString += "\n\t" + prop + ": " + buttonStyles[prop] + ";";
@@ -155,6 +168,7 @@
 					cssString += '\n}';
 
 					$('#buttonCode pre').text(cssString);
+
 				})
 			})
 

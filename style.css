@@ -401,12 +401,27 @@ input[type="submit"],
 
 /* # Preview Button
 ---------------------------------------------------------------------------------------------------- */
+#tabs {
+  margin-bottom: 20px;
+}
+
+.apply-styles {
+  border-top: 1px solid #ccc;
+  padding: 40px 0 0;
+}
+
+#applyButton:hover {
+  background-color: #ccc;
+  color: inherit;
+}
+
 #buttonHolder {
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid #aaa;
+  background: #f6f6f6 none repeat scroll 0 0;
+  border: 1px solid #e5e5e5;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -500,15 +515,24 @@ button#previewButton {
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
+/* Small Devices, Tablets */
+@media only screen and (max-width : 1045px) {
 
-/* Medium Devices, Desktops */
-@media only screen and (max-width : 992px) {
+	/* #Options Tabs (vertical)  */
+
+	.ui-tabs-vertical .ui-tabs-nav {
+		width: 40%;
+	}
+
+	.ui-tabs-vertical .ui-tabs-panel {
+		width: 60%;
+	}
 
 }
 
 
 /* Small Devices, Tablets */
-@media only screen and (max-width : 768px) {
+@media only screen and (max-width : 800px) {
 
 	.five-sixths,
 	.four-sixths,
@@ -531,7 +555,7 @@ button#previewButton {
 	}
 
 	/* #Options Tabs (vertical)  */
-	#tabs {
+	.first {
 		margin-bottom: 20px;
 	}
 
