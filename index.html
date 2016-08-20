@@ -77,6 +77,10 @@
 								<label for="borderRadius">Border Radius:</label>
 								<input type="number" id="borderRadius" name="borderRadius" min="0" value="0">
 							</li>
+							<li>
+								<label for="borderColor">Border Color:</label>
+								<input type="color" id="borderColor" name="borderColor" value="#adadad">
+							</li>
 						</ul>
 					</div>
 					<div id="button-background">
@@ -112,7 +116,7 @@
 				
 				// Add button option sections in tab layout
 				$( "#tabs" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
-    			$( "#tabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
+    			$( "#tabs > ul li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
 
 				// Declare all style property variables
 				var fontSize = $('#fontSize').val();
@@ -123,6 +127,7 @@
 				var borderWidth = $('#borderWidth').val();
 				var borderStyle = $( "#borderStyle option:selected").val();
 				var borderRadius = $('#borderRadius').val();
+				var borderColor = $('#borderColor').val();
 				var backgroundColor = $('#backgroundColor').val();
 				var fontColor = $('#fontColor').val();
 
@@ -142,6 +147,7 @@
 					borderWidth = $('#borderWidth').val();
 					borderStyle = $( "#borderStyle option:selected").val();
 					borderRadius = $('#borderRadius').val();
+					borderColor = $('#borderColor').val();
 					backgroundColor = $('#backgroundColor').val();
 					fontColor = $('#fontColor').val();
 
@@ -154,6 +160,7 @@
 						"border-width": borderWidth + "px",
 						"border-style": borderStyle,
 						"border-radius": borderRadius + "px",
+						"border-color": borderColor,
 						"background-color": backgroundColor,
 						"color": fontColor
 					};

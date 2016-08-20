@@ -257,10 +257,7 @@ input[type="radio"] {
 }
 
 input[type="color"] {
-  display: block;
   height: 38px;
-  padding: 0;
-  width: 38px;
 }
 
 ::-moz-placeholder {
