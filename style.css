@@ -433,7 +433,7 @@ input[type="submit"],
 }
 
 button#previewButton {
-	background-color: #333;
+/*	background-color: #333;
 	border-width: 1px;
 	border-style: solid;
 	border-color: transparent;
@@ -443,7 +443,7 @@ button#previewButton {
 	font-size: 1.6rem;
 	font-weight: 400;
 	padding: 16px 24px;
-	outline: none;
+	outline: none;*/
 }
 
 
