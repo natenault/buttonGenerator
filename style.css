@@ -230,6 +230,10 @@ figure {
 /* ## Forms
 --------------------------------------------- */
 
+label {
+	display: block;
+}
+
 input,
 select,
 textarea {
@@ -258,6 +262,11 @@ input[type="radio"] {
 
 input[type="color"] {
   height: 38px;
+}
+
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  display: inline;
 }
 
 ::-moz-placeholder {
@@ -417,7 +426,7 @@ input[type="submit"],
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #f6f6f6 none repeat scroll 0 0;
+  background: #fbfbfb none repeat scroll 0 0;
   border: 1px solid #e5e5e5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -430,20 +439,6 @@ input[type="submit"],
   min-height: calc(100vh - 50vh);
   padding: 20px 10px;
   width: 100%;
-}
-
-button#previewButton {
-/*	background-color: #333;
-	border-width: 1px;
-	border-style: solid;
-	border-color: transparent;
-	border-radius: 0;
-	color: #fff;
-	font-size: 16px;
-	font-size: 1.6rem;
-	font-weight: 400;
-	padding: 16px 24px;
-	outline: none;*/
 }
 
 

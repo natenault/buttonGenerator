@@ -71,6 +71,11 @@
 									<option value="solid" selected>Solid</option>
 									<option value="dotted">Dotted</option>
 									<option value="dashed">Dashed</option>
+									<option value="double">Double</option>
+									<option value="groove">Groove</option>
+									<option value="ridge">Ridge</option>
+									<option value="inset">Inset</option>
+									<option value="outset">Outset</option>
 								</select>
 							</li>
 							<li>
@@ -102,9 +107,7 @@
 				<div id="buttonHolder">
 					<a id="previewButton" class="button">dummyText</a>
 				</div>
-				<div id="buttonCode">
-					<pre></pre>
-				</div>
+				<div id="buttonCode"></div>
 			</div>
 		</div>
 
@@ -113,12 +116,24 @@
 		<script>
 
 			$(function(){
+
 				
 				// Add button option sections in tab layout
 				$( "#tabs" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
     			$( "#tabs > ul li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
 
+    			// Add box for showing styles with <pre> tags
+    			$('#buttonCode').append('<pre></pre>');
+
+    			// Change button text dynamically
+    			$('#previewButton').text( $('#buttonText').val() );
+				$('#buttonText').on('change keyup', function(){
+					buttonText = $('#buttonText').val();
+					$('#previewButton').text(buttonText);
+				});
+
 				// Declare all style property variables
+				var fontColor = $('#fontColor').val();
 				var fontSize = $('#fontSize').val();
 				var paddingTop = $('#paddingTop').val();
 				var paddingRight = $('#paddingRight').val();
@@ -129,15 +144,12 @@
 				var borderRadius = $('#borderRadius').val();
 				var borderColor = $('#borderColor').val();
 				var backgroundColor = $('#backgroundColor').val();
-				var fontColor = $('#fontColor').val();
+				
 
 				// Display new styles on click of button with id applyButton
 				$('#applyButton').click(function( evt ){
 
 					evt.preventDefault();
-
-					var buttonText = $('#buttonText').val();
-					$('#previewButton').text(buttonText);
 
 					fontSize = $('#fontSize').val();
 					paddingTop = $('#paddingTop').val();
